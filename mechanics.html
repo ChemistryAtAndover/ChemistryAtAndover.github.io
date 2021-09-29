@@ -1,0 +1,54 @@
+---
+layout: home
+title: Intuitive Physics Mechanics
+description: Intuitions, tricks, and quirks of classical mechanics from Newtonian to Lagrangian...
+---
+
+<div class="box main-left">
+    <h1>Newtonian Mechanics' Tricks and Wonders</h1>
+    <p class="side-margin nice-text">
+        In this section, we will explore classical mechanics from Newtonian to Lagrangian. See how many
+        equations you can recognize, they all represent Newton's $2^{nd}$ Law!
+    </p>
+    <div class="side-margin">
+        $$
+        F=ma
+        \\
+        \textbf{F}=m\textbf{a}
+        \\
+        \textbf{F}=\frac{d\textbf{p}}{dt}
+        \\
+        \frac{∂L}{∂x} = \frac{d}{dt}\frac{∂L}{∂x’}
+        $$
+    </div>
+    <h2>All Mechanics Posts</h2>
+    <div class="flex-container post-container">
+        {% for post in site.posts %}
+        {% if post.tags contains "mechanics" %}
+        <a href="{{ post.url }}" class="flex-child post-box nice-text size-down">
+            <h5 class="no-top">{{ post.title }}</h5>
+            <p>{{ post.description }}</p>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+    {% if count>=1 %}
+    {% break %}
+    {% endif %}
+    {% if post.tags contains "mechanics" %}
+    {% assign count = count | plus: 1 %}
+    <br>
+    <h6>Preview of Recent Post</h6>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>Written {{ post.date | date_to_string }} by {{ post.author }}</p>
+    <hr>
+    <br>
+    <div class="post-mid nice-text stretched">
+        {{ post.content }}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

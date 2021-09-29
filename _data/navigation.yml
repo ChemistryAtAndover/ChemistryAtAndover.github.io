@@ -1,0 +1,8 @@
+- name: Home
+  link: /
+- name: E&M
+  link: /electromagnetism
+- name: Mechanics
+  link: /mechanics
+- name: About
+  link: /about
