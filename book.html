@@ -1,33 +1,29 @@
 ---
 layout: home
-title: Intuitive Physics Electromagnetism
-description: Explore the intuition and interconnection of Maxwell's Equations and Lorentz force law...
+title: Student-written Chemistry Textbook
+description: Chemistry textbook written by students at Andover
 ---
 
 <div class="box main-left">
-    <h1>Maxwell's Equations of Electromagnetism</h1>
+    <h1>Textbook Title</h1>
     <p class="side-margin nice-text">
-        Behold the full wonder of the laws of Electromagnetism!
-        In this section, we explore the intuition and interconnection of the 5 laws of electromagnetism, the 4
-        Maxwell's Equations and Lorentz force law.
+        textbook description
     </p>
     <div class="side-margin">
         $$
-        \nabla\cdot \textbf{E}=\frac{\rho}{\epsilon_0}
+        F=ma
         \\
-        \nabla\cdot \textbf{B}=0
+        \textbf{F}=m\textbf{a}
         \\
-        \nabla\times \textbf{E} = -\frac{\partial \textbf{B}}{\partial t}
+        \textbf{F}=\frac{d\textbf{p}}{dt}
         \\
-        \nabla\times \textbf{B} = \mu_0 \textbf{j} + \mu_0\epsilon_0 \frac{\partial \textbf{E}}{\partial t}
-        \\
-        \textbf{F}=q(\textbf{E}+\textbf{v}\times\textbf{B})
+        \frac{∂L}{∂x} = \frac{d}{dt}\frac{∂L}{∂x’}
         $$
     </div>
-    <h2>All Electromagnetism Posts</h2>
+    <h2>All Mechanics Posts</h2>
     <div class="flex-container post-container">
         {% for post in site.posts %}
-        {% if post.tags contains "electromagnetism" %}
+        {% if post.tags contains "mechanics" %}
         <a href="{{ post.url }}" class="flex-child post-box nice-text size-down">
             <h5 class="no-top">{{ post.title }}</h5>
             <p>{{ post.description }}</p>
@@ -41,7 +37,7 @@ description: Explore the intuition and interconnection of Maxwell's Equations an
     {% if count>=1 %}
     {% break %}
     {% endif %}
-    {% if post.tags contains "electromagnetism" %}
+    {% if post.tags contains "mechanics" %}
     {% assign count = count | plus: 1 %}
     <br>
     <h6>Preview of Recent Post</h6>

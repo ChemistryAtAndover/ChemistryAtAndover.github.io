@@ -1,7 +1,7 @@
-title : Intuitive Physics
-tagline : Understand physics deeply and intuitively!
-description : I share my insights into classical physics in this blog, from Faraday's Paradoxes to the definition of angular momentum.
-url : https://intuitivephysics.me
+title : Chemistry At Andover
+tagline : Learn chemistry in a fun and engaging way
+description : We present chemistry in fun blog posts, memes, and textbook that we have written
+url : https://chemistryatandover.github.io/
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -16,10 +16,9 @@ kramdown:
 permalink: /:title
 
 author:
-  name: Michael Huang
+  name: Andover Chem Club
 social:
-  name: Michael Huang
+  name: Andover Chem Club
   links:
-    - https://www.linkedin.com/in/michael-huang-610661196/
-    - https://github.com/michaelyhuang23
+    - https://github.com/ChemistryAtAndover
 
