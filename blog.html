@@ -4,52 +4,50 @@ title: Andover Chem Blog
 description: Explore chemistry topics in fun and engaging ways
 ---
 
-<div class="box main-left">
-    <h1>Intro</h1>
-    <p class="side-margin nice-text">
-        Andover Chem Club's sassy intro
-    </p>
-    <div class="side-margin">
-        $$
-        \nabla\cdot \textbf{E}=\frac{\rho}{\epsilon_0}
-        \\
-        \nabla\cdot \textbf{B}=0
-        \\
-        \nabla\times \textbf{E} = -\frac{\partial \textbf{B}}{\partial t}
-        \\
-        \nabla\times \textbf{B} = \mu_0 \textbf{j} + \mu_0\epsilon_0 \frac{\partial \textbf{E}}{\partial t}
-        \\
-        \textbf{F}=q(\textbf{E}+\textbf{v}\times\textbf{B})
-        $$
-    </div>
-    <h2>All Posts</h2>
-    <div class="flex-container post-container">
-        {% for post in site.posts %}
-        {% if post.tags contains "electromagnetism" %}
-        <a href="{{ post.url }}" class="flex-child post-box nice-text size-down">
-            <h5 class="no-top">{{ post.title }}</h5>
-            <p>{{ post.description }}</p>
-        </a>
-        {% endif %}
-        {% endfor %}
-    </div>
-
-    {% assign count = 0 %}
+<h1>Intro</h1>
+<p class="side-margin nice-text">
+    Andover Chem Club's sassy intro
+</p>
+<div class="side-margin">
+    $$
+    \nabla\cdot \textbf{E}=\frac{\rho}{\epsilon_0}
+    \\
+    \nabla\cdot \textbf{B}=0
+    \\
+    \nabla\times \textbf{E} = -\frac{\partial \textbf{B}}{\partial t}
+    \\
+    \nabla\times \textbf{B} = \mu_0 \textbf{j} + \mu_0\epsilon_0 \frac{\partial \textbf{E}}{\partial t}
+    \\
+    \textbf{F}=q(\textbf{E}+\textbf{v}\times\textbf{B})
+    $$
+</div>
+<h2>All Posts</h2>
+<div class="flex-container post-container">
     {% for post in site.posts %}
-    {% if count>=1 %}
-    {% break %}
-    {% endif %}
     {% if post.tags contains "electromagnetism" %}
-    {% assign count = count | plus: 1 %}
-    <br>
-    <h6>Preview of Recent Post</h6>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p>Written {{ post.date | date_to_string }} by {{ post.author }}</p>
-    <hr>
-    <br>
-    <div class="post-mid nice-text stretched">
-        {{ post.content }}
-    </div>
+    <a href="{{ post.url }}" class="flex-child post-box nice-text size-down">
+        <h5 class="no-top">{{ post.title }}</h5>
+        <p>{{ post.description }}</p>
+    </a>
     {% endif %}
     {% endfor %}
 </div>
+
+{% assign count = 0 %}
+{% for post in site.posts %}
+{% if count>=1 %}
+{% break %}
+{% endif %}
+{% if post.tags contains "electromagnetism" %}
+{% assign count = count | plus: 1 %}
+<br>
+<h6>Preview of Recent Post</h6>
+<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+<p>Written {{ post.date | date_to_string }} by {{ post.author }}</p>
+<hr>
+<br>
+<div class="post-mid nice-text stretched">
+    {{ post.content }}
+</div>
+{% endif %}
+{% endfor %}
